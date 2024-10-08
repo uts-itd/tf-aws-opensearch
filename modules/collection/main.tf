@@ -129,7 +129,7 @@ resource "aws_opensearchserverless_lifecycle_policy" "this" {
     {
       Rules = [
         { for k, v in {
-          Resource            = ["index/${var.name}"]
+          Resource            = ["index/${var.name}/*"]
           ResourceType        = "index"
           MinIndexRetention   = var.lifecycle_policy_min_index_retention
           NoMinIndexRetention = var.lifecycle_policy_no_min_index_retention
